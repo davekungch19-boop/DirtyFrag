@@ -17,11 +17,11 @@ public class TwoStepProgressView extends View {
 
     private static final int BAR_H_DP = 4;
     private static final int GAP_DP = 12;
-    private static final int TRACK = 0xFF2E2E30;
-    private static final int FILL = 0xFF4E8AE8;
-    private static final int FILL_GREY = 0xFF2A2A2E;
+    private static final int TRACK = 0xFF39234D;
+    private static final int FILL = 0xFFB64DFF;
+    private static final int FILL_GREY = 0xFF241531;
     private static final int FAILED_RED = 0xFFE57373;
-    private static final int LABEL_GREY = 0xFF47474A;
+    private static final int LABEL_GREY = 0xFF8F68AD;
 
     private final Paint trackPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private final Paint fillPaint = new Paint(Paint.ANTI_ALIAS_FLAG);

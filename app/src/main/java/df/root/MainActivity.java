@@ -566,7 +566,7 @@ public class MainActivity extends Activity implements IReporter {
                     // been set, because that is the combination the headline renders
                     // in - and the update pill has to be exactly this wide to cover it.
                     headlinePx = Math.round(
-                            titleView.getPaint().measureText("DirtyFrag"));
+                            titleView.getPaint().measureText("SONTEEN"));
                 }
             }
         });
@@ -644,9 +644,9 @@ public class MainActivity extends Activity implements IReporter {
             binding.btnRun.setEnabled(false);
             binding.btnRun.setText("Running");
             // Same dark greyed-out styling as the Rooted state.
-            binding.btnRun.setTextColor(0xFF6E6E6E);
-            binding.btnRun.setBackgroundTintList(ColorStateList.valueOf(0xFF1F1F1F));
-            binding.btnRun.setStrokeColor(ColorStateList.valueOf(0xFF1F1F1F));
+            binding.btnRun.setTextColor(0xFF9A82B0);
+            binding.btnRun.setBackgroundTintList(ColorStateList.valueOf(0xFF241531));
+            binding.btnRun.setStrokeColor(ColorStateList.valueOf(0xFF241531));
             binding.outputView.setText("");
             logBuffer.setLength(0);
             if (lastLogFile.exists()) lastLogFile.delete();
@@ -703,7 +703,7 @@ public class MainActivity extends Activity implements IReporter {
             ghRow.setText("Open Github Page");
             ghRow.setGravity(android.view.Gravity.CENTER_VERTICAL | android.view.Gravity.START);
             ghRow.setPadding((int) (20 * md), 0, 0, 0);
-            ghRow.setTextColor(0xFFE8E8E8);
+            ghRow.setTextColor(0xFFF2E7FF);
             ghRow.setTextSize(android.util.TypedValue.COMPLEX_UNIT_SP, 15);
             ghRow.setOnClickListener(v2 -> {
                 v2.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP);
@@ -726,7 +726,7 @@ public class MainActivity extends Activity implements IReporter {
             rlRow.setText("Reset UI Layout");
             rlRow.setGravity(android.view.Gravity.CENTER_VERTICAL | android.view.Gravity.START);
             rlRow.setPadding((int) (20 * md), 0, 0, 0);
-            rlRow.setTextColor(0xFFE8E8E8);
+            rlRow.setTextColor(0xFFF2E7FF);
             rlRow.setTextSize(android.util.TypedValue.COMPLEX_UNIT_SP, 15);
             rlRow.setOnClickListener(v2 -> {
                 v2.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP);
@@ -754,7 +754,7 @@ public class MainActivity extends Activity implements IReporter {
             exRow.setBackgroundResource(R.drawable.menu_row_highlight);
             TextView exText = new TextView(this);
             exText.setText("Expert Mode");
-            exText.setTextColor(0xFFE8E8E8);
+            exText.setTextColor(0xFFF2E7FF);
             exText.setTextSize(android.util.TypedValue.COMPLEX_UNIT_SP, 15);
             exRow.addView(exText, new android.widget.LinearLayout.LayoutParams(
                     0, android.view.ViewGroup.LayoutParams.WRAP_CONTENT, 1f));
@@ -783,10 +783,10 @@ public class MainActivity extends Activity implements IReporter {
                             android.view.ViewGroup.LayoutParams.MATCH_PARENT, Math.max(1, (int) md));
             sepLp.setMargins((int) (20 * md), 0, (int) (20 * md), 0);
             android.view.View sep1 = new android.view.View(this);
-            sep1.setBackgroundColor(0xFF3F3F3F);
+            sep1.setBackgroundColor(0xFF513365);
             box.addView(sep1, 1, sepLp);
             android.view.View sep2 = new android.view.View(this);
-            sep2.setBackgroundColor(0xFF3F3F3F);
+            sep2.setBackgroundColor(0xFF513365);
             android.widget.LinearLayout.LayoutParams sep2Lp =
                     new android.widget.LinearLayout.LayoutParams(
                             android.view.ViewGroup.LayoutParams.MATCH_PARENT, Math.max(1, (int) md));
@@ -844,10 +844,10 @@ public class MainActivity extends Activity implements IReporter {
         boolean ok = expertMode;
         binding.tvAutorunTitle.setText(ok ? "Autorun" : "Autorun (Expert)");
         binding.tvRebootTitle.setText(ok ? "Auto reboot" : "Auto reboot (Expert)");
-        binding.tvAutorunTitle.setTextColor(ok ? 0xFFFFFFFF : 0xFF6E6E6E);
-        binding.tvAutorunDesc.setTextColor(ok ? 0xFF9E9E9E : 0xFF5A5A5A);
-        binding.tvRebootTitle.setTextColor(ok ? 0xFFFFFFFF : 0xFF6E6E6E);
-        binding.tvRebootDesc.setTextColor(ok ? 0xFF9E9E9E : 0xFF5A5A5A);
+        binding.tvAutorunTitle.setTextColor(ok ? 0xFFFFFFFF : 0xFF9A82B0);
+        binding.tvAutorunDesc.setTextColor(ok ? 0xFFC3A7DC : 0xFF806B95);
+        binding.tvRebootTitle.setTextColor(ok ? 0xFFFFFFFF : 0xFF9A82B0);
+        binding.tvRebootDesc.setTextColor(ok ? 0xFFC3A7DC : 0xFF806B95);
         binding.switchBootStart.setEnabled(ok);
         binding.switchAutoSoftReboot.setEnabled(ok
                 && binding.switchBootStart.isChecked());
@@ -1277,7 +1277,7 @@ public class MainActivity extends Activity implements IReporter {
                 ? "Not selected - required"
                 : suManagerLabel + "  (" + suManagerPkg + ")");
         binding.suManagerSubtitle.setTextColor(suManagerPkg == null
-                ? 0xFFE57373 : 0xFF9E9E9E);
+                ? 0xFFE57373 : 0xFFC3A7DC);
     }
 
     /** OneUI-style rounded popup list over the dim overlay - same look and feel
@@ -1297,7 +1297,7 @@ public class MainActivity extends Activity implements IReporter {
             none.setText("No app with libksud.so found");
             none.setGravity(android.view.Gravity.CENTER_VERTICAL | android.view.Gravity.START);
             none.setPadding((int) (20 * md), (int) (12 * md), (int) (20 * md), (int) (12 * md));
-            none.setTextColor(0xFF6E6E6E);
+            none.setTextColor(0xFF9A82B0);
             none.setTextSize(android.util.TypedValue.COMPLEX_UNIT_SP, 15);
             box.addView(none);
         }
@@ -1314,7 +1314,7 @@ public class MainActivity extends Activity implements IReporter {
             line.setGravity(android.view.Gravity.CENTER_VERTICAL | android.view.Gravity.START);
             TextView t = new TextView(this);
             t.setText(e.label);
-            t.setTextColor(0xFFE8E8E8);
+            t.setTextColor(0xFFF2E7FF);
             t.setTextSize(android.util.TypedValue.COMPLEX_UNIT_SP, 15);
             line.addView(t, new android.widget.LinearLayout.LayoutParams(
                     0, android.view.ViewGroup.LayoutParams.WRAP_CONTENT, 1f));
@@ -1332,7 +1332,7 @@ public class MainActivity extends Activity implements IReporter {
 
             TextView sub = new TextView(this);
             sub.setText(e.packageName);
-            sub.setTextColor(0xFF8E8E8E);
+            sub.setTextColor(0xFFB89ACF);
             sub.setTextSize(android.util.TypedValue.COMPLEX_UNIT_SP, 11);
             col.addView(sub);
 
@@ -1399,7 +1399,7 @@ public class MainActivity extends Activity implements IReporter {
         suManagerPkg = e.packageName;
         suManagerLabel = e.label;
         binding.suManagerSubtitle.setText(e.label + "  (" + e.packageName + ")");
-        binding.suManagerSubtitle.setTextColor(0xFF9E9E9E);
+        binding.suManagerSubtitle.setTextColor(0xFFC3A7DC);
         updateRunButton();
     }
 
@@ -1422,10 +1422,10 @@ public class MainActivity extends Activity implements IReporter {
         boolean ok = suManagerPkg != null;
         binding.btnRun.setEnabled(ok);
         binding.btnRun.setText("Run exploit");
-        binding.btnRun.setTextColor(ok ? 0xFFE0E0E0 : 0xFF6E6E6E);
-        binding.btnRun.setBackgroundTintList(ColorStateList.valueOf(ok ? 0xFF7A7A7A : 0xFF1F1F1F));
+        binding.btnRun.setTextColor(ok ? 0xFFE0E0E0 : 0xFF9A82B0);
+        binding.btnRun.setBackgroundTintList(ColorStateList.valueOf(ok ? 0xFF9B35FF : 0xFF241531));
         binding.btnRun.setStrokeColor(
-                ColorStateList.valueOf(ok ? 0xFFA6A6A6 : 0xFF1F1F1F));
+                ColorStateList.valueOf(ok ? 0xFFD88BFF : 0xFF241531));
     }
 
     /**
@@ -1644,7 +1644,7 @@ public class MainActivity extends Activity implements IReporter {
     private void applyRecoveryDot(D2Status.Result r, D2Writer.Vault v, boolean armed) {
         final int lime = 0xFFAEEA00;    // lime, the update pill's all-clear
         final int red = 0xFFE57373;     // the red the failure bar already uses
-        final int grey = 0xFF6E6E6E;    // grey: nothing to indicate here
+        final int grey = 0xFF9A82B0;    // grey: nothing to indicate here
         final int amber = 0xFFFFB300;   // asked for, not confirmed
 
         int dot;
@@ -2074,14 +2074,14 @@ public class MainActivity extends Activity implements IReporter {
 
         TextView name = new TextView(this);
         name.setText(label);
-        name.setTextColor(0xFF9E9E9E);
+        name.setTextColor(0xFFC3A7DC);
         name.setTextSize(android.util.TypedValue.COMPLEX_UNIT_SP, 15);
         row.addView(name, new android.widget.LinearLayout.LayoutParams(
                 0, android.view.ViewGroup.LayoutParams.WRAP_CONTENT, 1f));
 
         TextView state = new TextView(this);
         state.setText(value);
-        state.setTextColor(0xFFE8E8E8);
+        state.setTextColor(0xFFF2E7FF);
         state.setTextSize(android.util.TypedValue.COMPLEX_UNIT_SP, 15);
         row.addView(state, new android.widget.LinearLayout.LayoutParams(
                 android.view.ViewGroup.LayoutParams.WRAP_CONTENT,
@@ -2116,7 +2116,7 @@ public class MainActivity extends Activity implements IReporter {
         name.setText(label);
         // The same grey the label half of a value row is drawn in, dimmed further when the
         // switch cannot be moved: the row is still readable, it is just not live.
-        name.setTextColor(enabled ? 0xFF9E9E9E : 0xFF6F6F6F);
+        name.setTextColor(enabled ? 0xFFC3A7DC : 0xFF6F6F6F);
         name.setTextSize(android.util.TypedValue.COMPLEX_UNIT_SP, 15);
         row.addView(name, new android.widget.LinearLayout.LayoutParams(
                 0, android.view.ViewGroup.LayoutParams.WRAP_CONTENT, 1f));
@@ -2144,7 +2144,7 @@ public class MainActivity extends Activity implements IReporter {
     /** The hairline between two rows of the Odin submenu. */
     private android.view.View odinSep(float md) {
         android.view.View sep = new android.view.View(this);
-        sep.setBackgroundColor(0xFF3F3F3F);
+        sep.setBackgroundColor(0xFF513365);
         return sep;
     }
 
@@ -2201,9 +2201,9 @@ public class MainActivity extends Activity implements IReporter {
         binding.twoStep.setSeg2(1f, "Reboot", 0xFFE57373);
         binding.btnRun.setEnabled(false);
         binding.btnRun.setText("Run exploit");
-        binding.btnRun.setTextColor(0xFF6E6E6E);
-        binding.btnRun.setBackgroundTintList(ColorStateList.valueOf(0xFF1F1F1F));
-        binding.btnRun.setStrokeColor(ColorStateList.valueOf(0xFF1F1F1F));
+        binding.btnRun.setTextColor(0xFF9A82B0);
+        binding.btnRun.setBackgroundTintList(ColorStateList.valueOf(0xFF241531));
+        binding.btnRun.setStrokeColor(ColorStateList.valueOf(0xFF241531));
         setCompactButton(false, false);
     }
 
@@ -2212,9 +2212,9 @@ public class MainActivity extends Activity implements IReporter {
         // Not rooted does not mean runnable: the manager still has to be picked
         // and a failed run locks the pill until reboot.
         boolean ok = !rooted && canRun();
-        int fg = (rooted || !ok) ? 0xFF6E6E6E : 0xFFE0E0E0;
-        int bg = (rooted || !ok) ? 0xFF1F1F1F : 0xFF7A7A7A;
-        int stroke = (rooted || !ok) ? 0xFF1F1F1F : 0xFFA6A6A6;
+        int fg = (rooted || !ok) ? 0xFF9A82B0 : 0xFFE0E0E0;
+        int bg = (rooted || !ok) ? 0xFF241531 : 0xFF9B35FF;
+        int stroke = (rooted || !ok) ? 0xFF241531 : 0xFFD88BFF;
         binding.btnRun.setEnabled(ok);
         binding.btnRun.setText(rooted ? "Rooted" : "Run exploit");
         binding.btnRun.setTextColor(fg);
@@ -2259,11 +2259,11 @@ public class MainActivity extends Activity implements IReporter {
         boolean wasVisible = binding.btnKsu.getVisibility() == View.VISIBLE
                 && binding.btnKsu.getAlpha() > 0.99f;
         binding.btnKsu.setBackgroundTintList(ColorStateList.valueOf(
-                ksuLit ? 0xFFB0B0B0 : 0xFF1F1F1F));
+                ksuLit ? 0xFFB0B0B0 : 0xFF241531));
         // Dark ink on the lit pill, mid-grey on the unlit one - same grey as
         // the share glyph.
         binding.ksuChevron.setImageTintList(ColorStateList.valueOf(
-                ksuLit ? 0xFF1F1F1F : 0xFF6E6E6E));
+                ksuLit ? 0xFF241531 : 0xFF9A82B0));
         if (compact && !wasVisible) {
             // First appearance: pop in as a circle. The morph is chained to the
             // pop-in's end so the Run pill has already finished shrinking - its

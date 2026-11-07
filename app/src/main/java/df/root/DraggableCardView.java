@@ -29,8 +29,8 @@ import android.widget.FrameLayout;
  */
 public class DraggableCardView extends FrameLayout {
 
-    private static final int REST_BG = 0xFF1C1C1C, HELD_BG = 0xFF3A3A3C;
-    private static final int HELD_STROKE = 0xFFFFFFFF;
+    private static final int REST_BG = 0xFF1A1028, HELD_BG = 0xFF352047;
+    private static final int HELD_STROKE = 0xFFD88BFF;
     private static final float REST_RADIUS_DP = 26f;
     private static final float STROKE_W_DP = 1.2f;
     /** How far the lifted card floats above the stack. */

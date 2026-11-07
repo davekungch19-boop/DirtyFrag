@@ -36,10 +36,10 @@ import android.widget.TextView;
  */
 public class PillButton extends TextView {
 
-    private static final int   DEFAULT_FILL   = 0xFF7A7A7A;
-    private static final int   DEFAULT_STROKE = 0xFFA6A6A6;
+    private static final int   DEFAULT_FILL   = 0xFF9B35FF;
+    private static final int   DEFAULT_STROKE = 0xFFD88BFF;
     /** The theme's colorControlHighlight, inlined because there is no Material theme now. */
-    private static final int   RIPPLE         = 0x4D6E6E6E;
+    private static final int   RIPPLE         = 0x66D88BFF;
     private static final float RADIUS_DP      = 27f;
     private static final float STROKE_DP      = 0.5f;
 
