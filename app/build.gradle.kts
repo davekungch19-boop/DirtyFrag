@@ -1,3 +1,4 @@
+
 plugins {
     id("com.android.application")
 }
@@ -18,38 +19,33 @@ android {
         }
     }
 
-    signingConfigs {
-        create("keystore") {
-            storeFile = file("keystore.jks")
-            storePassword = "dirtyfrag"
-            keyAlias = "dirtyfrag"
-            keyPassword = "dirtyfrag"
-        }
-    }
-
     buildTypes {
         debug {
-            signingConfig = signingConfigs.getByName("keystore")
+            // ใช้ Android Debug Keystore อัตโนมัติ
+            // ไม่ต้องใช้ app/keystore.jks
         }
+
         release {
-            signingConfig = signingConfigs.getByName("keystore")
             isMinifyEnabled = true
             isShrinkResources = true
+
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
+                getDefaultProguardFile(
+                    "proguard-android-optimize.txt"
+                ),
                 "proguard-rules.pro"
             )
         }
     }
 
-// AGP 9 removed the old applicationVariants API; this is the replacement.
-androidComponents {
-    onVariants { variant ->
-        variant.outputs.forEach { output ->
-            output.outputFileName.set("dirtyfrag.apk")
+    androidComponents {
+        onVariants { variant ->
+            variant.outputs.forEach { output ->
+                output.outputFileName.set("sonteen.apk")
+            }
         }
     }
-}
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -60,18 +56,8 @@ androidComponents {
     }
 
     buildFeatures {
-        // No viewbinding: df.root.ActivityMainBinding is written by hand, which keeps
-        // every binding.<id> call site and drops androidx.databinding:viewbinding.
         viewBinding = false
-        // The toolbar version pill reads BuildConfig.VERSION_NAME, so the pill
-        // can never fall behind versionName again.
         buildConfig = true
-    }
-
-    externalNativeBuild {
-        cmake {
-            path("src/main/jni/CMakeLists.txt")
-        }
     }
 
     packaging {
@@ -82,9 +68,5 @@ androidComponents {
 }
 
 dependencies {
-    // Deliberately empty. The whole UI is framework widgets plus the custom views in
-    // df.root (CardStackLayout, DraggableCardView, PillButton, OneUiSwitch,
-    // TwoStepProgressView, BottomFadeView). appcompat, material, constraintlayout and
-    // viewbinding used to sit here and pulled 40 androidx/material artifacts into the
-    // APK; the replacements are documented under "Unreleased" in CHANGELOG.md.
+    // UI-only dependencies
 }
