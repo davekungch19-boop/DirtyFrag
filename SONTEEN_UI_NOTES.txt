@@ -1,0 +1,19 @@
+SONTEEN UI refresh (based on the supplied DirtyFrag v1.17 source)
+
+Changed only presentation files and presentation color constants:
+- app/src/main/res/layout/activity_main.xml
+- app/src/main/res/values/colors.xml
+- app/src/main/res/drawable/bg_sonteen_screen.xml (new)
+- app/src/main/res/drawable/bg_pill.xml
+- app/src/main/res/drawable/bg_circle.xml
+- app/src/main/res/drawable/bg_circle_grey_ripple.xml
+- app/src/main/res/drawable/bg_odin_pill.xml
+- app/src/main/res/drawable/card_row_ripple.xml
+- app/src/main/java/df/root/DraggableCardView.java (visual colors only)
+- app/src/main/java/df/root/OneUiSwitch.java (visual colors only)
+- app/src/main/java/df/root/PillButton.java (visual colors only)
+- app/src/main/java/df/root/TwoStepProgressView.java (visual colors only)
+- app/src/main/java/df/root/MainActivity.java (literal UI palette only)
+
+No exploit/native/kernel-module code was changed. Original GPL-2.0-only LICENSE is retained.
+The archive is source-only; it has not been built or tested on a device.

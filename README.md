@@ -31,8 +31,7 @@ hardening) and keeps upstream's SU-manager agnostic design.
 A fresh install of DirtyFrag gets a new Android UID, so the grant in the manager has to be given
 again after every reinstall.
 
-<img width="540" height="1170" alt="Screenshot_20261101_001753" src="https://github.com/user-attachments/assets/78a9a0ce-7769-4107-8fcd-623f2df1c073" />
-
+<img width="540" height="1170" alt="Screenshot_20261015_220718" src="https://github.com/user-attachments/assets/bd727962-a520-4820-a91a-90147aa84faa" />
 
 
 ## Features
@@ -45,13 +44,8 @@ again after every reinstall.
 - **KernelSU Modules** on/off - works without root, applied by the kernel module before ksud starts
 - RO Partition Protection
 - Advanced log, with one tap to save it to Downloads
-- **Odin** pill in the toolbar: its dot says whether the device will answer a download-mode request on
-  this boot, and tapping it opens the three facts that decision is made from
-- **Odin access you can write** - since 1.17, behind Expert mode and needing root: the **Recovery Writer**
-  switch on that same pill authorises or clears download mode for the current boot by changing one
-  authorisation byte in Samsung's vault, then reading it back to confirm the write actually took. The
-  vendor clears that byte on its own schedule and a reboot drops DirtyFrag's root with it, so
-  **Autorun Writer** asks for the same write again at every reroot
+- **Odin** pill in the toolbar: its dot says whether this firmware will let the device into download mode, and
+  tapping it opens the three facts that decision is made from
 - When a newer release is published, the headline itself becomes a lime **Update** pill - one tap from the release
 - Shizuku not needed
 
@@ -90,7 +84,7 @@ re-run a "slow" run, the daemon may still be working.
 
 **Q: How do I remove root cleanly?**
 
-A: Before unrooting, use file manager with root and delete /data/adb/ksu, ksud, module residue.
+A: Before unrooting, use file manager with root and delete /data/adb/KernelSU, KSUD residue (NOT ADB FOLDER ITSELF)
 
 ## Building
 
