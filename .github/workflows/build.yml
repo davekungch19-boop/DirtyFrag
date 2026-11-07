@@ -1,41 +1,55 @@
-name: SONTEEN APK Builder
+
+name: SONTEEN Build
 
 on:
-  workflow_dispatch:
   push:
-    branches:
-      - main
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+  workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
-  build:
-    name: Build Android APK
+  ko-select-tests:
+    name: Native selection logic tests
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup JDK 17
+      - name: Build and run tests
+        run: |
+          cc -std=gnu11 -Wall -Wextra -Werror \
+            -I app/src/main/jni \
+            tests/ko_select_test.c \
+            -o /tmp/ko_select_test
+          /tmp/ko_select_test
+
+  build-apk:
+    name: Build SONTEEN APK
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Java
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '17'
+          java-version: '21'
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
 
-      - name: Grant Execute Permission
+      - name: Grant permission
         run: chmod +x gradlew
 
       - name: Build Debug APK
-        run: ./gradlew assembleDebug
+        run: ./gradlew :app:assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: SONTEEN-APK
+          name: SONTEEN-Debug-APK
           path: app/build/outputs/apk/debug/*.apk
           if-no-files-found: error
