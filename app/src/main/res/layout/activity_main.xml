@@ -10,13 +10,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="true"
+    android:background="@drawable/bg_sonteen_screen">
 
     <FrameLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:background="@android:color/transparent"
         android:fitsSystemWindows="true">
 
         <android.widget.Toolbar
@@ -25,7 +27,7 @@
             android:layout_height="56dp"
             android:contentInsetStart="0dp"
             android:contentInsetStartWithNavigation="0dp"
-            android:title="DirtyFrag"
+            android:title="SONTEEN"
             android:titleMarginStart="32dp"
             android:titleTextAppearance="@style/ToolbarTitle">
 
@@ -130,7 +132,7 @@
                     android:layout_width="8dp"
                     android:layout_height="8dp"
                     android:background="@drawable/bg_circle"
-                    android:backgroundTint="#FF6E6E6E" />
+                    android:backgroundTint="@color/sonteen_primary" />
 
                 <TextView
                     android:id="@+id/odinLabel"
@@ -138,7 +140,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
                     android:text="Recovery"
-                    android:textColor="#FFD9D9D9"
+                    android:textColor="@color/sonteen_text"
                     android:textSize="12sp"
                     android:textStyle="bold" />
 
@@ -194,9 +196,10 @@
         android:id="@+id/cardSuManager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="#FF1C1C1C"
+        app:cardBackgroundColor="@color/sonteen_card"
         app:cardCornerRadius="26dp"
-        app:strokeWidth="0dp">
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/sonteen_border">
 
         <LinearLayout
             android:id="@+id/rowSuManager"
@@ -232,7 +235,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Not selected - required"
-                    android:textColor="#FF9E9E9E"
+                    android:textColor="@color/sonteen_secondary"
                     android:textSize="12sp" />
 
             </LinearLayout>
@@ -254,9 +257,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        app:cardBackgroundColor="#FF1C1C1C"
+        app:cardBackgroundColor="@color/sonteen_card"
         app:cardCornerRadius="26dp"
-        app:strokeWidth="0dp">
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/sonteen_border">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -294,7 +298,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Runs the exploit after boot"
-                        android:textColor="#FF9E9E9E"
+                        android:textColor="@color/sonteen_secondary"
                         android:textSize="12sp" />
 
                 </LinearLayout>
@@ -334,7 +338,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Soft reboots after root"
-                        android:textColor="#FF9E9E9E"
+                        android:textColor="@color/sonteen_secondary"
                         android:textSize="12sp" />
 
                 </LinearLayout>
@@ -356,9 +360,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        app:cardBackgroundColor="#FF1C1C1C"
+        app:cardBackgroundColor="@color/sonteen_card"
         app:cardCornerRadius="26dp"
-        app:strokeWidth="0dp">
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/sonteen_border">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -390,7 +395,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Enabled - active at next reboot"
-                    android:textColor="#FF9E9E9E"
+                    android:textColor="@color/sonteen_secondary"
                     android:textSize="12sp" />
 
             </LinearLayout>
@@ -411,9 +416,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        app:cardBackgroundColor="#FF1C1C1C"
+        app:cardBackgroundColor="@color/sonteen_card"
         app:cardCornerRadius="26dp"
-        app:strokeWidth="0dp">
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/sonteen_border">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -444,7 +450,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Shows full scrollable log"
-                    android:textColor="#FF9E9E9E"
+                    android:textColor="@color/sonteen_secondary"
                     android:textSize="12sp" />
 
             </LinearLayout>
@@ -499,7 +505,7 @@
                 android:id="@+id/outputView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#FFB3B3B3"
+                android:textColor="@color/sonteen_log_text"
                 android:textIsSelectable="false"
                 android:textSize="11sp" />
 
@@ -547,10 +553,10 @@
         android:stateListAnimator="@null"
         android:text="Run exploit"
         android:textSize="14sp"
-        android:backgroundTint="#FF7A7A7A"
-        android:textColor="#FFE0E0E0"
+        android:backgroundTint="@color/sonteen_primary"
+        android:textColor="#FFFFFFFF"
         app:strokeWidth="0.5dp"
-        app:strokeColor="#FFA6A6A6" />
+        app:strokeColor="@color/sonteen_accent" />
 
     <!-- SU-manager launcher. Circle (54dp, chevron dead-centre) while a run is
          in flight; once root is verified MainActivity morphs it into a pill the
@@ -570,7 +576,7 @@
         android:layout_marginStart="12dp"
         android:layout_marginBottom="28dp"
         android:background="@drawable/bg_pill"
-        android:backgroundTint="#FF2E2E30"
+        android:backgroundTint="@color/sonteen_card_alt"
         android:clickable="true"
         android:contentDescription="Open SU manager"
         android:elevation="12dp"
@@ -591,7 +597,7 @@
             android:layout_marginStart="22dp"
             android:alpha="0"
             android:text="Manager"
-            android:textColor="#FF1F1F1F"
+            android:textColor="#FFFFFFFF"
             android:textSize="14sp" />
 
         <ImageView
@@ -635,7 +641,7 @@
         android:padding="0dp"
         android:scaleType="center"
         android:src="@drawable/ic_share"
-        android:tint="#FF6E6E6E"
+        android:tint="@color/sonteen_accent"
         android:visibility="gone" />
 
     <!-- Dim overlay: darkens the app while one of the toolbar popups (the overflow menu, the
